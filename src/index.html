@@ -5,38 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do - Task Manager</title>
+    <link rel="shortcut icon" href="./assets/task-favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
-    <header class="task-title">
-        Today
-        <div class="task-title sub">25th Nov</div>
-    </header>
     <nav>
+        <img height="32" width="32" src="./assets/task-favicon.svg" class="main-icon">
         <div class="menu-title">
-            Menu
-            <input type="checkbox" name="hamburger menu" id="menu-icon" class="checkbox-hide">
+            <div class="title navbar-title">Menu</div>
+            <label for="menu-icon"><input type="checkbox" name="hamburger-menu" id="menu-icon" class="checkbox-hide"
+                    checked>
+                <svg height="24" width="24">
+                    <use href="./assets/svg-sprite-icons.svg#menu-open" class="menu-open"></use>
+                    <use href="./assets/svg-sprite-icons.svg#menu" class="menu-closed"></use>
+                </svg>
+            </label>
         </div>
-        <input type="search" name="Search" id="task-search">
-        <div class="list-title">Tasks
+        <div class="search">
+            <input type="search" name="task-search" id="task-search">
         </div>
-        <ul class="list">
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Today</input></li>
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Upcoming</input></li>
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Sticky Wall</input></li>
-        </ul>
-        <div class="project-title">Project</div>
-        <ul class="project">
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Work</input></li>
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Home</input></li>
-            <li class="project-last"><button>Add New Project</button></li>
-        </ul>
-        <div class="tag-title">Tag</div>
-        <ul class="tag">
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Tag 1</input></li>
-            <li><input type="checkbox" name="" id="" class="checkbox-hide">Tag 2</input></li>
-        </ul>
+        <div class="nav-list">
+            <div class="title task-title">Task</div>
+            <ul class="tasks">
+                <li><label for="today">
+                        <svg class="nav-icon" height="24" width="24">
+                            <use href="./assets/svg-sprite-icons.svg#today"></use>
+                        </svg>
+                        <span class="nav-name task-icon">Today</span>
+                        <input type="checkbox" name="" id="today" class="checkbox-hide">
+                    </label></li>
+                <li><label for="upcoming">
+                        <svg class="nav-icon" height="24" width="24">
+                            <use href="./assets/svg-sprite-icons.svg#upcoming"></use>
+                        </svg>
+                        <span class="nav-name task-icon">Upcoming</span>
+                        <input type="checkbox" name="" id="upcoming" class="checkbox-hide">
+                    </label></li>
+                <li><label for="sticky">
+                        <svg class="nav-icon" height="24" width="24">
+                            <use href="./assets/svg-sprite-icons.svg#sticky-notes"></use>
+                        </svg>
+                        <span class="nav-name task-icon">Sticky Wall</span>
+                        <input type="checkbox" name="" id="sticky" class="checkbox-hide">
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-list">
+            <div class="title project-title">List</div>
+            <ul class="project">
+                <li>
+                    <label for="work">
+                        <span class="nav-icon project-icon" id="work"></span>
+                        <span class="nav-name">Work</span>
+                        <input type="checkbox" name="" id="work" class="checkbox-hide">
+                    </label>
+                </li>
+                <li><label for="home">
+                        <span class="nav-icon project-icon" id="home"></span>
+                        <span class="nav-name">Home</span>
+                        <input type="checkbox" name="" id="home" class="checkbox-hide">
+                    </label></li>
+                <li class="project-last no-add">
+                    <button class="add-project main">
+                        <svg class="nav-icon" height="24" width="24">
+                            <use href="./assets/svg-sprite-icons.svg#add"></use>
+                        </svg>
+                        Add New Project
+                    </button>
+                    <div class="add-project overview">
+                        <input type="text" name="" id="" class="text">
+                        <button class="add-project option add">
+                            <svg class="nav-icon" height="20" width="20">
+                                <use href="./assets/svg-sprite-icons.svg#add-s"></use>
+                            </svg>
+                        </button>
+                        <button class="add-project option cancel">
+                            <svg class="nav-icon" height="20" width="20">
+                                <use href="./assets/svg-sprite-icons.svg#cancel"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-list">
+            <div class="title tag-title">Tag</div>
+            <ul class="tag">
+                <li><input type="checkbox" name="" id="" class="checkbox-hide">Tag 1</input></li>
+                <li><input type="checkbox" name="" id="" class="checkbox-hide">Tag 2</input></li>
+            </ul>
+        </div>
     </nav>
+
+    <main>
+        <header class="task-title">
+            Today
+            <div class="task-title sub">25th Nov</div>
+        </header>
+        <main>
+            <button type="button">Add New Task</button>
+            <li><input type="checkbox" name="" id="" class="task-checkbox">Taskto
+                Complete</input>
+                <div><span class="task-attribute">
+                        <span class="task-date"></span><span class="task-subtask-count"></span><span
+                            class="task-project"></span></span></div>
+            </li>
+            <li><input type="checkbox" name="" id="" class="task-checkbox">Taskto
+                Complete</input>
+                <div><span class="task-attribute">
+                        <span class="task-date"></span><span class="task-subtask-count"></span><span
+                            class="task-project"></span></span></div>
+            </li>
+            <li><input type="checkbox" name="" id="" class="task-checkbox">Taskto
+                Complete</input>
+                <div><span class="task-attribute">
+                        <span class="task-date"></span><span class="task-subtask-count"></span><span
+                            class="task-project"></span></span></div>
+            </li>
+        </main>
+    </main>
 
 </body>
 
